@@ -1,6 +1,6 @@
 html {
-  box-sizing: border-box;
-    font-size: 62.5%; /** Reset para REMS - 62.5% = 10px de 16px **/
+  box-sizing: border-box;/*aun que le pongas padding no va a camniar el ancho del elemento*/
+  font-size: 62.5%; /** Reset para REMS - 62.5% = 10px de 16px **/
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -17,6 +17,24 @@ p {
     font-size: 1.6rem;
     line-height: 2;
 }
+/**Boton**/
+.boton{
+  background-color: #00b8e4;
+  padding: 10px 30px;
+  display: inline-block;/*al ser block puedo controlar el margin a los inline no se les puede aplicar el margin*/
+  margin-top: 10px;
+  color: #ffffff;
+  text-decoration: none;/*elimina las decoraciones de a que vienen por default*/
+  text-transform: uppercase;
+  font-weight: bold;/*lea agrega negrita*/
+  font-size: 18px;
+  transition: background-color .3s ease-in-out;/*agrega un poco de transicion al cambio de color de las imagenes*/
+}
+.boton:hover{
+  cursor: pointer;
+  background-color: #058ad5;
+}
+
 
 /**Utilidades**/
 .centrar-texto{
@@ -36,9 +54,17 @@ p {
   margin: 0 auto;  /*sirve para centrar (es muy usado)*/
 }
 
+/**Clear**/
+.clearfix::after{/*se usa para poder corregir el problema de que el contenedor principal no tenga tamaño de cuerpo definido*/
+  content: "";
+  clear: both;
+  display: block;
+}
+
 /**navegacion**/
 .barra{
   background-color: #db008b;
+  margin-top: 40px;
 }
 .navegacion-principal a{
   color: #ffffff;
@@ -57,6 +83,107 @@ p {
 .navegacion-principal a:hover{
   background-color: #00b8e4;
 }
-/**Contenido principal**/
+/**Contenedores principales**/
+.contenido-principal{
+    margin-top: 40px;
+}
+.contenido-principal,
+.sidebar{
+  padding: 20px;/*para que no quede pegado en el dispositivo movil*/
+}
+@media (min-width:768px) {
+  .contenido-principal{
+    width: 70%;
+    float: left;
+    padding: 0 60px 0 0;/*reseteo el padding*/
+  }
+  .sidebar{
+    width: 30%;
+    float: right;
+    padding: 0;/*reseteo el padding*/
+    margin-top: 40px;
+  }
 
-/**Footer**/
+}
+
+/*entradas de blog*/
+h2{
+  color: #08B8E4;
+  margin-bottom: 20px;
+}
+.entrada{
+  margin-bottom: 60px;
+}
+.entrada:last-of-type{
+  margin-bottom: 0;
+}
+.entrada img{
+  display: block;/*por default son display inline*/
+}
+@media (min-width:480px) {
+  .entrada img{
+    width: 300px;
+    float: left;
+    margin: 0 30px 0 0;
+  }
+}
+.entrada{
+  text-align: justify;
+}
+/**sidebar**/
+.sidebar ul{
+  list-style: none;
+  padding: 0;/*por default vienen con un padding y queda feo asi que se los quitamos*/
+}
+.sidebar ul li{
+  padding: 10px 10px 10px 0;
+}
+.sidebar ul li:hover{/*este le da estilos al li*/
+  background-color: #08B8E4;
+}
+.sidebar ul li a{
+  color: #08B8E4;
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+.sidebar ul li:hover a{/*este le da estilos al enlace(a) cuando pase el mismo evento que es el hover*/
+  color: #ffffff;
+}
+/**footer**/
+.footer-sitio{
+  background-color: #db008b;
+  padding-top: 40px;
+  margin-top: 60px;
+  color: #ffffff;
+  text-align: center;
+}
+.footer-sitio h2{
+  color: #ffffff;
+}
+.footer-sitio a{
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 22px;
+  margin-right: 20px;
+}
+.footer-sitio a:last-of-type{
+  margin: 0;
+}
+@media (min-width:768px) {
+    .footer-sitio .nosotros{
+      float: left;
+      width: 30%;
+      text-align: left;
+    }
+    .footer-sitio .menu{
+      float: right;
+      width: 60%;
+      text-align: right;
+    }
+}
+
+.copyright{
+  background-color: #b10474;
+  margin: 50px 0 0 0;
+  padding: 20px 0;
+}
