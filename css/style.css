@@ -1,0 +1,38 @@
+html {
+  box-sizing: border-box;
+    font-size: 62.5%; /** Reset para REMS - 62.5% = 10px de 16px **/
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/**Globales**/
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+img {
+    max-width: 100%;
+}
+p {
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/**Utilidades**/
+.contenedor{
+  max-width: 1200px;
+  width: 95%;
+}
+.centrar-texto{
+  text-align: center;
+}
+.no-margin{
+  margin: 0
+}
+
+
+/**Header**/
+
+/**Contenido principal**/
+
+/**Footer**/
